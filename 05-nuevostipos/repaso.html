@@ -67,10 +67,13 @@
                 event.preventDefault();
                 console.log('Buscando...');
 
+                /*
                 fetch('http://localhost:8080/buscar.php', {
                     method: 'POST',
                     body: new FormData(buscar)
-                }).then(response => response.json())
+                })*/
+                fetch('http://localhost:5500/05-nuevostipos/json/buscar.json')
+                .then(response => response.json())
                 .then(data => {
                     console.log(data);
                     let datos = data[0];
