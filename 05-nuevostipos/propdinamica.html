@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //Propiedades dinamicas en JS
+
+        function Persona(nombre, apellido,edad){
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.edad = edad;
+        }
+
+        const juan = new Persona('Juan', 'Perez', 25);
+        juan.profesion = 'Ingeniero'; //Agrega una propiedad al objeto juan
+
+        let NOMBRE = 'nombre';
+        let NOMBRE2 = Symbol('nombre');
+        let p = {
+            [NOMBRE]:'Juan', //Asignacion de propiedades dinamicas
+            [NOMBRE2]:'Miguel' //Asignacion de propiedades dinamicas
+        }
+        p.profesion = 'Ingeniero'; //Agrega una propiedad al objeto p
+        console.log(p);
+
+    </script>
+    
+</body>
+</html>
