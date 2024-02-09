@@ -8,7 +8,28 @@
 <body>
     
     <script>
-        
+        //generador de contrasenas aleatorias utilizando funcion generadora
+
+        function* generarCaracterAleatorio(caracteres){
+            while(true){
+                yield caracteres[Math.floor(Math.random() * caracteres.length)];
+            }
+        }
+
+        function generarContrasena(longitud){
+            const caracteresPermitidos = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+{}[]|;:,.<>?';
+            let contrasena = '';
+            const generar = generarCaracterAleatorio(caracteresPermitidos);
+
+            for(let i = 0; i < longitud; i++){
+                contrasena +=  generar.next().value;
+            }
+            return contrasena;
+        }
+
+
+        console.log('Generador de contrasenas aleatorias');
+        console.log(generarContrasena(32));
 
     </script>
 
