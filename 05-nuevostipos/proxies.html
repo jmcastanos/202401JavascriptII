@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        const persona = {
+            nombre: 'Juan',
+            apellido: 'Perez',
+            edad: 25,
+        }
+
+        //validador... si la propiedad no existe, retorna un mensaje
+        const handler = {
+            /*get(obj, prop){
+                if(prop in obj){
+                    return obj[prop];
+                }
+                return 'Propiedad no encontrada';
+            }*/
+            set(obj, prop, value){
+                if(prop === 'edad'){
+                    if(!Number.isInteger(value)){
+                        console.error('La edad no es un numero');
+                        return;
+                    }
+                }
+                else if(prop == "nombre" || prop == "apellido"){
+                    if(typeof value !== 'string'){
+                        console.error('El nombre y apellido deben ser texto');
+                        return;
+                    }
+                }
+                obj[prop] = value;
+            }
+            
+        }
+
+        const proxy = new Proxy(persona, handler);
+        proxy.edad = "Juan";
+        proxy.nombre = 20;
+        console.log(proxy.nombre);
+        console.log(proxy.apellido);
+        console.log(proxy.edad);
+        //console.log(proxy.direccion);
+
+    
+        const fechaNacimientoVirtual = new Proxy(persona, {
+            get(obj, prop){
+                if(prop === 'fdn'){
+                    return new Date().getFullYear() - obj.edad;
+                }
+            }
+        });
+
+        console.log(fechaNacimientoVirtual.fdn);
+
+    </script>
+    
+</body>
+</html>
