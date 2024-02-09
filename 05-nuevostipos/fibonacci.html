@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+    //Funcion fibonacci utilizando funcion generadora
+    //0,1,1,2,3,5,8,13,21,34,55,89,144,233,377,610
+
+    function* fibonacci(){
+        let [prev, current] = [0, 1]; // Asignacion de desestructuracion
+        while(true){
+            [prev, current] = [current, prev + current];
+            yield current;//retorna el valor de current y hace una pausa
+
+            //continua con el while... en el siguiente next()
+        }
+    }
+
+    let secuencia = fibonacci();
+    for(let i = 0; i < 10; i++){
+        console.log(secuencia.next().value);
+    }
+
+</script>
+
+</body>
+</html>
