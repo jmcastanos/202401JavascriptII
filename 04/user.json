@@ -1,0 +1,14 @@
+{
+
+    "Capitales": [
+        
+            {"Aguascalientes": "Aguascalientes" } ,
+            {"Baja California": "Mexicali"} ,
+            {"Baja California Sur": "La Paz"} ,
+            {"Campeche": "San Francisco"} ,
+            {"Chiapas": "Tuxtla Gutiérrez"} ,
+            {"Chihuahua": "Chihuahua"} ,
+            {"Coahuila": "Saltillo"} 
+        
+    ]
+}

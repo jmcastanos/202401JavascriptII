@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<h1>Hola</h1>
+
+<button onclick="alert('Que tal???')">Presioname</button>
+
+
+<script>
+    /*function saludar(msg, callback){
+        alert(msg);
+
+        callback(); //Que tal???
+
+        return ;
+    }
+    
+    saludar( 'Hola', () => {
+        alert('Que tal???');
+    } )*/
+
+//. Crea la función dos, que imprimirá en la consola el texto “Dos”
+    console.log("Dos");
+
+    async function dos(){
+        console.log("Dos");
+    }
+
+    const dos2 = async () => {
+        console.log("Dos 2");
+    }
+
+    const dos3 = async function(){
+        console.log("Dos 3");
+    }
+
+    dos(console.log("x"));
+
+    dos(function(){
+        console.log("x")
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,2 @@
+Soy un texto mejor hecho
+<b>BOLD, hay que usar strong</b>

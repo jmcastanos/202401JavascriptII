@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #estados, #municipios {
+            margin: 10px;
+        }
+        select {
+            width: 200px;
+        }
+        table {
+            margin: 10px auto;
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 95%;
+
+        }
+        td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+        #cps > div{
+            font-weight: bold;
+            text-align: center;
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+    <div id="estados">
+        <label for="estado">Estado</label>
+        <select name="estado" id="estado">
+            <option value="0"> ------ Todos ------ </option>
+            <option value="02"> Baja California </option>
+            <option value="03"> Baja California Sur </option>
+        </select>
+    </div>
+
+    <div id="municipios">
+        <label for="municipio">Municipio</label>
+        <select name="municipio" id="municipio">
+            <option value="0"> ------ Todos ------ </option>
+        </select>
+    </div>
+
+    <section id="cps">
+        <div>Codigos Postales</div>
+        <table>
+            <tr>
+                <td>Codigo Postal</td>
+                <td>Municipio</td>
+                <td>Estado</td>
+                <td>Ciudad</td>
+                <td>Clave de oficina</td>
+            </tr>
+            <tr>
+                <td>01000</td>
+                <td>Álvaro Obregón</td>
+                <td>CDMX</td>
+                <td>Ciudad de México</td>
+                <td>1</td>
+            </tr>
+
+        </table>
+    </section>
+
+    <script>
+        var combobox = document.getElementById('estado');
+        combobox.addEventListener('change', function(){
+            var municipios = document.getElementById('municipio');
+            var estado = this.value;
+            
+            /*
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'codigospostales/'+estado+".xml", true);
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState == 4 && xhr.status == 200){
+                    let xml = new DOMParser().parseFromString(xhr.responseText, 'text/xml');
+                    console.log(xml);
+                }
+            }
+            xhr.send();*/
+
+            fetch('codigospostales/'+estado+".xml")
+            .then(response => response.text())
+            .then(data => {
+                let xml = new DOMParser().parseFromString(data, 'text/xml');
+                let municipios = xml.querySelectorAll("d_ciudad");
+
+                console.log(municipios);
+
+            });
+
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <h1>Loading...</h1>
+    <img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="">
+
+    <button onclick="obtenerBroma()">Siguiente broma</button>
+
+    <script>
+        let url='https://api.chucknorris.io/jokes/random';
+        
+        obtenerBroma();
+
+         function obtenerBroma(){
+            document.querySelector('img').style.display = 'block';
+
+            //async/await
+
+            let data = fetch(url)
+            .then(resp => resp.json())
+            .then(data => {
+                console.log(data);
+                document.querySelector('h1').innerHTML = data.value;
+                document.querySelector('img').style.display = 'none';
+            })
+            .catch(error => console.log(error));
+        }
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+    
+</body>
+</html>

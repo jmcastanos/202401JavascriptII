@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+    let id  = Symbol("id"); // clave unica
+    let id2 = Symbol("id"); // clave unica
+
+    let usuario = {
+        id: 123,
+        nombre: "John",
+        [id]: 123
+
+    };
+    usuario[id2] = 123; //sobre escribe linea 18
+    //comparando valores...
+    console.log(usuario[id]  == usuario[id2] );
+    
+    //comparando referencias...
+    console.log(id === id2);
+
+
+    let nulo = null;
+    let s = new Set();
+
+    console.log("nulo", nulo);
+    console.log("set", s);
+
+    //nulo.add("hola"); //error
+    s.add("holasssssssssssssssssss");
+    console.log(s);
+
+    
+
+
+
+</script>
+
+</body>
+</html>

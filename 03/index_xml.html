@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    th,
+    td {
+        padding: 5px;
+    }
+</style>
+
+<body>
+    <h2>Objeto XMLHttpRequest</h2>
+    <h3>Peticiones de datos XML</h3>
+    <button type="button" onclick="cargarDocumentoJson()">Obten direcciones</button>
+    <br><br>
+    <table id="demo"></table>
+    <script>
+
+        function cargarDocumentoJson() {
+            fetch('catalog.json')
+                .then(response => response.json())
+                .then(data => {
+                    myFunction2(data);
+                })
+        }
+
+        function CargaDocumento() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function () {
+                myFunction(this);
+            }
+            xhttp.open("GET", "catalog.xml");
+            xhttp.send();
+        }
+
+        function myFunction2(data){
+            console.log(data);
+                    let table = "<tr><th>Nombre</th><th>Calle</th><th>Ciudad</th><th>Estado</th></tr>";
+                    data.PurchaseOrder.forEach(element => {
+                        table += "<tr><td>" +
+                            element.Address.name +
+                            "</td><td>" +
+                            element.Address.Street +
+                            "</td><td>" +
+                            'xxxxxxxxx' +
+                            "</td><td>" +
+                            'yyyyyyyyy' +
+                            "</td></tr>";
+                    });
+                    document.getElementById("demo").innerHTML = table;
+        }
+
+        function myFunction(xml) {
+            console.log(xml);
+            const xmlDoc = xml.responseXML;
+            console.log(xmlDoc);
+
+            const x = xmlDoc.getElementsByTagName("Address");
+            let table = "<tr><th>Nombre</th><th>Calle</th><th>Ciudad</th><th>Estado</th></tr>";
+            for (let i = 0; i < x.length; i++) {
+                table += "<tr><td>" +
+                    x[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue +
+                    "</td><td>" +
+                    x[i].getElementsByTagName("Street")[0].childNodes[0].nodeValue +
+                    "</td><td>" +
+                    x[i].getElementsByTagName("City")[0].childNodes[0].nodeValue +
+                    "</td><td>" +
+                    x[i].getElementsByTagName("State")[0].childNodes[0].nodeValue +
+                    "</td></tr>";
+            }
+            document.getElementById("demo").innerHTML = table;
+        }
+    </script>
+</body>
+
+</html>

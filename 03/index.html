@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Usuarios registrados</h1>
+
+
+    <button onclick="obtenerUsuarios2()">Obtener Usuarios</button>
+
+    <button onclick="alert('Hola!')">Saludar</button>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi consectetur voluptates nemo accusamus consequuntur. Molestias ad sint temporibus, officiis similique inventore laboriosam aliquid nihil, facere iure molestiae sequi, expedita reiciendis.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi consectetur voluptates nemo accusamus consequuntur. Molestias ad sint temporibus, officiis similique inventore laboriosam aliquid nihil, facere iure molestiae sequi, expedita reiciendis.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi consectetur voluptates nemo accusamus consequuntur. Molestias ad sint temporibus, officiis similique inventore laboriosam aliquid nihil, facere iure molestiae sequi, expedita reiciendis.</p>
+
+    <div id="demostracion"></div>
+
+    <script>
+        //Asincronia
+
+        function obtenerUsuarios2(){
+            var xhttp = new XMLHttpRequest();
+
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("demostracion").innerHTML =
+                    this.responseText;
+                }
+            };
+
+            xhttp.open("GET", "ajax_info.txt", true);
+            xhttp.send();
+            // ///////////////////////////////////////////////////////////////
+            fetch('ajax_info.txt')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("demostracion").innerHTML = data;
+            })
+        }
+
+        
+
+
+
+    </script>
+</body>
+</html>

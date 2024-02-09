@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="app.js"></script>
+
+    <style>
+        table{
+            width: 100%;
+            border: 1px solid black; 
+            border-collapse: collapse;
+            
+        }
+        th{
+            background-color: #f2f2f2;
+
+        }
+        th, td{
+            border: 1px solid black;
+            padding: 5px;
+        }
+        /*tr.lightblue{
+            background-color: lightblue;
+        }
+        tr.lightgreen{
+            background-color: lightgreen;
+        }*/
+        tr:nth-child(odd){
+            background-color: red;
+        }
+        tr:nth-child(even){
+            background-color: lightgreen;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+<table id="mytabla">
+<thead>
+    <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Comment</th>
+    </tr>
+</thead>
+<tbody></tbody>
+</table>
+
+
+</body>
+</html>

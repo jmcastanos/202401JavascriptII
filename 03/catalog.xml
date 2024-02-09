@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<PurchaseOrder PurchaseOrderNumber="99503" OrderDate="1999-10-20">
+<Address Type="Shipping">
+<Name>Ellen Adams</Name>
+<Street>123 Maple Street</Street>
+<City>Mill Valley</City>
+<State>CA</State>
+<Zip>10999</Zip>
+<Country>USA</Country>
+</Address>
+<Address Type="Billing">
+<Name>Tai Yee</Name>
+<Street>8 Oak Avenue</Street>
+<City>Old Town</City>
+<State>PA</State>
+<Zip>95819</Zip>
+<Country>USA</Country>
+</Address>
+<Address Type="Shipping">
+<Name>John Doe</Name>
+<Street>123 Rodeo Street</Street>
+<City>Dallas</City>
+<State>TX</State>
+<Zip>10999</Zip>
+<Country>USA</Country>
+</Address>
+<Address Type="Billing">
+<Name>Tira Taylor</Name>
+<Street>9 Av</Street>
+<City>Sprinfield</City>
+<State>Az</State>
+<Zip>95819</Zip>
+<Country>USA</Country>
+</Address>
+</PurchaseOrder>
