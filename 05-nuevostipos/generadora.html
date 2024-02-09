@@ -23,13 +23,14 @@
 
             for(let i = 0; i < longitud; i++){
                 contrasena +=  generar.next().value;
+                //contrasena +=  caracteresPermitidos[Math.floor(Math.random() * caracteresPermitidos.length)];
             }
             return contrasena;
         }
 
 
         console.log('Generador de contrasenas aleatorias');
-        console.log(generarContrasena(32));
+        console.log(generarContrasena(128));
 
     </script>
 
