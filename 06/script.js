@@ -1,3 +1,7 @@
+let tasks = window.localStorage.getItem("pendientes");
+let taskList = document.getElementById("task-list");
+taskList.innerHTML = tasks;
+
 function guardarPendiente(){
     //
 
@@ -14,6 +18,11 @@ function guardarPendiente(){
     task.value = "";
 
 }
+
+document.getElementById("formtodo").addEventListener("submit", function(e){
+    e.preventDefault();
+    guardarPendiente()
+});
 
 document.getElementById("formtodo").addEventListener("submit", function(e){
     e.preventDefault();
