@@ -1,0 +1,20 @@
+[
+    {
+        "nombre": "vino 1",
+        "descripcion": "soy la descripcion",
+        "caracteristicas": {
+            "variedad": "blabla",
+            "alcohol": "8%",
+            "megusta": 5
+        }
+    },
+    {
+        "nombre": "vino 2",
+        "descripcion": "Este vino es fabuloso en tonos de frutas rojas y negras, con un toque de especias y un final largo y persistente.",
+        "caracteristicas": {
+            "variedad": "Frutal, especiado, largo y persistente",
+            "alcohol": "7%",
+            "megusta": 4
+        }
+    }
+]

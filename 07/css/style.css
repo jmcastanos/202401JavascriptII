@@ -1,0 +1,80 @@
+body, ul{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#wrapper{
+    background-image: url(../images/fondovinos.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+header{
+    background: #8d2231;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+header ul {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+}
+header ul >li{
+    list-style: none;
+}
+
+header a{
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    padding: 10px 10px;
+}
+header a:hover{
+    background-color: #661923;
+}
+
+
+#submenu button{
+    background-color: #fff;
+  color: #661923;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin: 10px 10px;
+  box-shadow: 2px 0px 7px 0px #661923;
+  
+  border-radius: 7px;
+}
+
+main {
+    width: 80%;
+    min-width: 300px;
+    margin: 0 auto;
+  }
+  #vinoactual{
+    margin-top: 2rem;
+    background-color: #fff;
+  padding: 1rem 2rem 2rem;
+  max-width: 607px;
+  border-radius: 7px;
+  box-shadow: 2px 0px 7px 0px #661923;
+  }
+
+  #vinoactual li span{
+    font-weight: bold;
+    color: black;
+  }
+  #vinoactual li{
+    color:gray;
+    line-height: 2;
+    list-style: none;
+  }
+
+  #submenu button.activo{
+    background-color: #661923;
+    color: #fff;
+  }
