@@ -47,3 +47,28 @@ getBlancos();
 document.querySelector("#vinosblancos").addEventListener("click", getBlancos);
 document.querySelector("#vinosrojo").addEventListener("click", getRojos);
 document.querySelector("#vinosrosados").addEventListener("click", getRosados);
+
+
+
+function obtenerVinos(tipo) {
+
+    tipo = tipo.toLowerCase();
+
+    // Desactivar o remover la clase activo de todos los botones
+    document.querySelectorAll("#submenu button").forEach(boton => {
+        boton.classList.remove("activo");
+    });
+
+    let boton = document.querySelector(`#vinos${tipo}`); //#vinosblancos
+    boton.classList.add("activo");
+
+    // Realizar la solicitud según el tipo de vino
+    let url = `http://localhost:5500/07/api/${tipo}.json`;
+
+    fetch(url)
+        .then(r => r.json())
+        .then(d => {
+            vinos = d;
+            cambiarVinoActual(vinos[0]);
+        });
+}

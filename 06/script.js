@@ -2,7 +2,7 @@
 let taskList = document.getElementById("task-list");
 taskList.innerHTML = tasks;*/
 
-function guardarPendiente(){
+function guardarPendiente(form){
     //
 
     let task = document.getElementById("new-task");
@@ -16,8 +16,18 @@ function guardarPendiente(){
     newTask.textContent = task.value;
     taskList.appendChild(newTask);
 
+    $url_api = "https://hook.us1.make.com/064x6mn0lxyfjeidnx7pbe7skaxfqdwa";
+    const formData = new FormData(form);
+
+    fetch($url_api, {
+        method: "POST",
+        body: formData
+    })
+
     task.value = ""
     alert("Pendiente guardado")
+
+
 
     //window.localStorage.setItem("pendientes", taskList.innerHTML);
     //window.localStorage.removeItem
@@ -25,7 +35,7 @@ function guardarPendiente(){
 
 document.getElementById("formtodo").addEventListener("submit", function(e){
     e.preventDefault();
-    guardarPendiente()
+    guardarPendiente(this)
 });
 
 
@@ -37,3 +47,20 @@ for(let i = 0; i < li.length; i++){
     });
 }
 
+
+
+function obtenerListadoDeCompras(){
+
+    fetch("https://hook.us1.make.com/bb2hwga0b9iasajvqzt2kzwawrjwj037")
+    .then(response => response.json())
+    .then(data => { 
+        /*let listado = document.getElementById("listado");
+        listado.innerHTML = "";
+        for(let i = 0; i < data.length; i++){
+            let li = document.createElement("li");
+            li.textContent = data[i].item;
+            listado.appendChild(li);
+        }*/
+        console.log(data);
+    });
+}

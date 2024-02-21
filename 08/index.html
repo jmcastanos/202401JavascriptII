@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+<form action="https://hook.us1.make.com/5y4jculh15x1pjiifb6dhpe59ae8h9iy" method="post">
+    <input type="text" name="name" id="name" placeholder="Name">
+    <input type="email" name="email" id="email" placeholder="Email">
+    <input type="text" name="dateStart" id="dateStart" placeholder="Fecha de cita">
+    <input type="submit" value="Send">
+</form>
+
+<script>
+    const form = document.querySelector('form');
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+
+
+        //https://hook.us1.make.com/rwwvbly82jf82yhs6s5t4bw2q28ec83u
+
+        const formData = new FormData(form);
+        fetch(form.action, {
+            method: form.method,
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        })
+        .catch(error => {
+            console.error(error);
+        });
+    });
+</script>
+    
+</body>
+</html>
